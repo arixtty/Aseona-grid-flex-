@@ -1,0 +1,56 @@
+.reviews__story {
+  height: 27rem;
+  width: 30rem;
+  margin: 2.5rem;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  text-align: left;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  position: relative;
+  outline: none;
+
+  &:before {
+    content: "\201C";
+    position: absolute;
+    top: -3.5rem;
+    font-size: 15rem;
+    line-height: 1;
+    color: rgba($color-pink-3, 0.2);
+    z-index: 2;
+  }
+
+  &--shape {
+    float: left;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &--img {
+    height: 100%;
+  }
+
+  &--caption {
+    margin-left: 7rem;
+    font-weight: 700;
+    color: #000;
+
+    span {
+      display: block;
+      text-transform: uppercase;
+      color: $color-cyan;
+      font-size: 1.4rem;
+      margin-top: 0.5rem;
+    }
+  }
+
+  &--text {
+    clear: both;
+    margin-top: 3rem;
+    color: #000;
+    font-style: italic;
+  }
+}

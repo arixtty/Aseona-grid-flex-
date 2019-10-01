@@ -1,0 +1,56 @@
+@mixin underlined($bottom, $height) {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  margin-right: auto;
+
+  &::after {
+    content: "";
+    height: $height;
+    position: absolute;
+    bottom: $bottom;
+    left: 0.5rem;
+    right: 0.5rem;
+    background: rgba($color-pink-3, 0.5);
+    z-index: -1;
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+/*
+$breakpoint argument choices:
+0-600px - phone
+600-900px - tab-port
+900-1200px - tab-land
+1800px+ - big-desktop
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 35.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    } //1800px
+  }
+}

@@ -1,0 +1,335 @@
+/* .intro {
+  position: relative;
+  background: $color-grey-3;
+
+  &__content {
+    width: 40%;
+    float: left;
+    margin: 10% 0;
+  }
+
+  &__text {
+    margin-top: 3rem;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #000;
+
+    &:hover,
+    &:active {
+      color: $color-cyan;
+      cursor: pointer;
+    }
+  }
+
+  &__image {
+    width: 40%;
+    float: right;
+    margin: 10% 0;
+  }
+
+  &__img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__pattern {
+    &-1 {
+      position: absolute;
+      right: 6%;
+      top: 3%;
+    }
+
+    &-2 {
+      position: absolute;
+      right: 45%;
+      bottom: 8%;
+
+      @include respond(phone) {
+        bottom: 2%;
+      }
+    }
+
+    &-3 {
+      position: absolute;
+      left: 9%;
+      top: 7%;
+
+      @include respond(phone) {
+        top: 2%;
+      }
+    }
+
+    &-4 {
+      position: absolute;
+      right: 8%;
+      bottom: 4%;
+    }
+
+    &-5 {
+      position: absolute;
+      right: 55%;
+      bottom: 15%;
+
+      @include respond(phone) {
+        display: none;
+      }
+    }
+
+    &-6 {
+      position: absolute;
+      left: 7%;
+      bottom: 5%;
+
+      @include respond(phone) {
+        left: 2%;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.welcome {
+  margin: 6% auto;
+
+  &__text {
+    margin: 3rem auto;
+  }
+
+  &__features {
+    @include clearfix();
+  }
+
+  &__feature {
+    width: 45%;
+
+    &:nth-of-type(1) {
+      float: left;
+    }
+
+    &:nth-of-type(2) {
+      float: right;
+    }
+  }
+
+  &__feature-text {
+    margin: 3rem auto;
+  }
+
+  &__badges {
+    position: relative;
+    min-height: 40rem;
+  }
+
+  &__badge {
+    position: absolute;
+
+    &--1 {
+      background: #d4f4f4;
+      top: 5%;
+      left: 13%;
+    }
+
+    &--2 {
+      background: #fbe7ea;
+      top: 70%;
+      left: 13%;
+    }
+
+    &--3 {
+      background: #e3f8d8;
+      right: 0;
+      top: 13%;
+    }
+
+    &--4 {
+      background: #f5efd8;
+      right: 0;
+      top: 78%;
+    }
+  }
+}
+
+.case-study {
+  background-color: $color-grey-3;
+  padding: 5% 12%;
+  overflow: hidden;
+
+  &__text {
+    position: relative;
+  }
+
+  &__paragpraph {
+    margin: 3rem 0;
+  }
+
+  &__btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+  }
+
+  &__link {
+    color: #fb5c71;
+  }
+
+  &__case {
+    margin: 2rem;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.services {
+  padding: 5% 0;
+  text-align: center;
+
+  &__subheading {
+    max-width: 40%;
+    margin: 0 auto 5rem;
+  }
+
+  &__card {
+    text-align: left;
+    height: 30rem;
+    padding: 2rem;
+  }
+
+  &__badge {
+    padding: 2rem;
+    background-image: url(../../img/bg-splash.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__text {
+    text-align: initial;
+  }
+}
+
+.pricing {
+  text-align: center;
+  font-size: 1.6rem;
+
+  &__period {
+    margin: 5rem 0;
+
+    .heading-tertiary {
+      display: inline-block;
+    }
+    .heading-tertiary:first-of-type {
+      margin-right: 3rem;
+    }
+  }
+
+  &__heading {
+    text-align: left;
+    .heading-tertiary {
+      color: #fff;
+    }
+  }
+
+  &__price {
+    &-offer {
+      color: #fff;
+    }
+
+    &-fare {
+      margin-top: 1rem;
+      color: #fff;
+      span {
+        font-size: 4.4rem;
+
+        sup {
+          font-style: italic;
+        }
+      }
+    }
+  }
+
+  &__services {
+    text-align: left;
+    list-style: none;
+    margin-top: 15rem;
+    margin-bottom: 3rem;
+
+    li {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.reviews {
+  text-align: center;
+  z-index: -1;
+  background: $color-grey-3;
+  margin-top: -25rem;
+  padding: 35rem 0 5%;
+
+  &__content {
+    @include clearfix();
+    margin-top: 5rem;
+    // white-space: nowrap;
+  }
+  &__image {
+    max-width: 40%;
+    padding: 0 5%;
+    margin-left: 10%;
+    float: left;
+
+    &--img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__stories {
+    width: 40%;
+    margin-right: 10%;
+    margin-top: 3%;
+    float: left;
+  }
+}
+
+.contact {
+  @include clearfix();
+  padding: 5% 0 2%;
+  &__card {
+    float: left;
+  }
+
+  &__image {
+    max-height: 40rem;
+    float: right;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
+
+.news {
+  padding: 5% 0;
+
+  &__feed {
+    padding: 5% 0%;
+  }
+}
+
+.main-subscribe {
+  padding: 5% 0;
+  background-color: $color-grey-3;
+  
+  &__heading {
+    font-size: 3.6rem;
+    color: #000;
+  }
+} */

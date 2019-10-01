@@ -1,0 +1,38 @@
+/* .subscribe {
+  padding: 5% 0;
+
+  &__container {
+    position: relative;
+  }
+
+  &__form {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    & > * {
+      outline: none;
+      border: none;
+      height: 4rem;
+      appearance: none;
+      padding: 0 2rem;
+    }
+    input {
+      border-radius: 10rem 0 0 10rem;
+      margin-right: 0;
+      width: 30rem;
+      display: inline-block;
+    }
+  }
+
+  &__btn {
+    border-radius: 0 10rem 10rem 0;
+    background-color: $color-pink-4;
+    color: #fff;
+    margin-left: -4px;
+    max-width: 12rem;
+    display: inline-block;
+    cursor: pointer;
+  }
+} */

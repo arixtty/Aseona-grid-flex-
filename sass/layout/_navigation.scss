@@ -1,0 +1,54 @@
+/* .navigation {
+  background: #38c3c7;
+  padding: 2rem 10%;
+
+  &__list {
+    display: inline-block;
+    list-style: none;
+    vertical-align: middle;
+  }
+
+  &__list-item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__list-link:link,
+  &__list-link:visited {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &__form {
+    display: inline-block;
+    width: calc(100% - 50rem);
+    text-align: right;
+  }
+
+  &__form-search {
+    width: 20%;
+    margin-right: 20%;
+    display: inline-block;
+
+    input {
+      width: 100%;
+      outline: none;
+      font-family: inherit;
+      vertical-align: middle;
+    }
+  }
+
+  &__form-list {
+    display: inline-block;
+
+    select {
+      font-family: inherit;
+      outline: none;
+      vertical-align: middle;
+    }
+  }
+}
+ */

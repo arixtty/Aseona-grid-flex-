@@ -1,0 +1,26 @@
+.contacts-phone {
+    font-size: 1.6rem;
+    
+    &__cta {
+		display: inline-block;
+	}
+
+	&__number {
+		display: inline-block;
+        color: #fb5c71;
+	}
+}
+
+.contacts-social {
+
+	&__btn {
+
+        a:link, a:visited {
+            color: #000;
+          }
+          
+          a:hover, a:active {
+            color: $color-cyan;
+          }
+	}
+}
