@@ -1,0 +1,15 @@
+.container {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [center-start] repeat(4, [col-start] minmax(min-content, 28rem) [col-end]) [center-end] 1fr [full-end];
+}
+
+.container-narrow {
+  display: grid;
+  grid-template-columns: 1fr repeat(4, minmax(min-content, 28rem)) 1fr;
+}
+
+.main { 
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: [full-start] 1fr [center-start] repeat(4, [col-start] minmax(min-content, 28rem) [col-end]) [center-end] 1fr [full-end];
+}

@@ -52,3 +52,54 @@
   }
 }
  */
+
+.navigation {
+  grid-column: 1 / -1;
+  grid-row: 2/3;
+
+  padding: 2rem 0;
+  background: #38c3c7;
+
+  &__center {
+    grid-column: 2 / 6;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: space-between;
+  }
+
+ &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    flex: 0 1 40%;
+  }
+
+  &__list-link:link,
+  &__list-link:visited {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    flex: 0 1 30%;
+  } 
+
+  &__form-search {
+    input {
+      font-family: inherit;
+      outline: none;
+      appearance: none;
+    }
+  }
+  
+  &__form-list {
+    select {
+      font-family: inherit;
+      outline: none;
+      appearance: none;
+    }
+  }
+}

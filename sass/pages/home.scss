@@ -1,3 +1,73 @@
+.intro {
+  grid-column: center-start / center-end;
+  grid-row: 4 / 5;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  gap: 10%;
+  padding: 10% 0;
+  position: relative;
+
+  &__text {
+    margin-top: 3rem;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #000;
+
+    &:hover,
+    &:active {
+      color: $color-cyan;
+      cursor: pointer;
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__pattern {
+    &-1 {
+      position: absolute;
+      right: 6%;
+      top: 3%;
+    }
+
+    &-2 {
+      position: absolute;
+      right: 45%;
+      bottom: 8%;
+    }
+
+    &-3 {
+      position: absolute;
+      left: 9%;
+      top: 7%;
+    }
+
+    &-4 {
+      position: absolute;
+      right: 8%;
+      bottom: 4%;
+    }
+
+    &-5 {
+      position: absolute;
+      right: 55%;
+      bottom: 15%;
+    }
+
+    &-6 {
+      position: absolute;
+      left: 7%;
+      bottom: 5%;
+    }
+  }
+}
+
 /* .intro {
   position: relative;
   background: $color-grey-3;
