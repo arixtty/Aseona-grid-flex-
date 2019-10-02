@@ -55,13 +55,12 @@
 
 .navigation {
   grid-column: 1 / -1;
-  grid-row: 2/3;
-
+  grid-row: 2 / 3;
   padding: 2rem 0;
   background: #38c3c7;
 
   &__center {
-    grid-column: 2 / 6;
+    grid-column: center-start / center-end;
     grid-row: 2 / 3;
     display: flex;
     justify-content: space-between;

@@ -15,63 +15,63 @@
     <title>Aseona</title>
 </head>
 
-<body>
-    <div class="container">
-        <header class="header">
+<body class="body-grid">
 
-            <div class="logo">
-                <img src="img/logo.png" alt="logo image" class="logo__img">
-                <div class="logo__text">Aseona</div>
+    <header class="header">
+
+        <div class="logo">
+            <img src="img/logo.png" alt="logo image" class="logo__img">
+            <div class="logo__text">Aseona</div>
+        </div>
+
+        <div class="contacts header__contacts">
+
+            <div class="contacts-phone header__contacts-phone">
+                <div class="contacts-phone__cta">Call Us:</div>
+                <div class="contacts-phone__number">(999) 999 99 9</div>
             </div>
 
-            <div class="contacts header__contacts">
+            <ul class="contacts-social header__contacts-social">
+                <li class="contacts-social__btn"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li class="contacts-social__btn"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li class="contacts-social__btn"><a href="#"><i class="fab fa-tumblr"></i></i></a></li>
+                <li class="contacts-social__btn"><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                <li class="contacts-social__btn"><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </header>
 
-                <div class="contacts-phone header__contacts-phone">
-                    <div class="contacts-phone__cta">Call Us:</div>
-                    <div class="contacts-phone__number">(999) 999 99 9</div>
-                </div>
+    <nav class="navigation container-narrow">
+        <div class="navigation__center">
+            <ul class="navigation__list">
+                <li class="navigation__list-item"><a href="#" class="navigation__list-link">Home</a></li>
+                <li class="navigation__list-item"><a href="#" class="navigation__list-link">Pages</a></li>
+                <li class="navigation__list-item"><a href="#" class="navigation__list-link">Services</a></li>
+                <li class="navigation__list-item"><a href="#" class="navigation__list-link">Case Studies</a></li>
+                <li class="navigation__list-item"><a href="#" class="navigation__list-link">Blog</a></li>
+                <li class="navigation__list-item"><a href="#" class="navigation__list-link">Contact</a></li>
+            </ul>
 
-                <ul class="contacts-social header__contacts-social">
-                    <li class="contacts-social__btn"><a href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li class="contacts-social__btn"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li class="contacts-social__btn"><a href="#"><i class="fab fa-tumblr"></i></i></a></li>
-                    <li class="contacts-social__btn"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                    <li class="contacts-social__btn"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                </ul>
+            <div class="navigation__form">
+                <form action="#" class="navigation__form-search">
+                    <input type="search">
+                </form>
+                <form action="#" class="navigation__form-list">
+                    <select name="language" id="language">
+                        <option value="en">en</option>
+                        <option value="ru">ru</option>
+                    </select>
+                </form>
             </div>
-        </header>
+        </div>
+    </nav>
 
-        <nav class="navigation container-narrow">
-            <div class="navigation__center">
-                <ul class="navigation__list">
-                    <li class="navigation__list-item"><a href="#" class="navigation__list-link">Home</a></li>
-                    <li class="navigation__list-item"><a href="#" class="navigation__list-link">Pages</a></li>
-                    <li class="navigation__list-item"><a href="#" class="navigation__list-link">Services</a></li>
-                    <li class="navigation__list-item"><a href="#" class="navigation__list-link">Case Studies</a></li>
-                    <li class="navigation__list-item"><a href="#" class="navigation__list-link">Blog</a></li>
-                    <li class="navigation__list-item"><a href="#" class="navigation__list-link">Contact</a></li>
-                </ul>
+   <main class="main body-grid">
 
-                <div class="navigation__form">
-                    <form action="#" class="navigation__form-search">
-                        <input type="search">
-                    </form>
-                    <form action="#" class="navigation__form-list">
-                        <select name="language" id="language">
-                            <option value="en">en</option>
-                            <option value="ru">ru</option>
-                        </select>
-                    </form>
-                </div>
-            </div>
-        </nav>
+            <section class="intro container-wide">
 
 
-        <main class="main">
-
-            <section class="intro">
-
-
+                <div class="intro__container container-narrow">
                     <div class="intro__content">
                         <h1 class="heading-primary"><span class="heading-primary--underlined">Growth</span><br><span
                                 class="heading-primary--underlined">Hacking</span></h1>
@@ -82,20 +82,86 @@
     
                         <a href="#" class="intro__link link">How it works</a>
                     </div>
-
+    
                     <div class="intro__image">
                         <img src="img/laptop.png" class="intro__img" alt="PC image">
                     </div>
-
+    
                     <img src="img/bg-small-image-1.png" alt="decorative image" class="intro__pattern-1">
                     <img src="img/bg-small-image-1.png" alt="decorative image" class="intro__pattern-2">
                     <img src="img/bg-small-image-2.png" alt="decorative image" class="intro__pattern-3">
                     <img src="img/bg-small-image-3.png" alt="decorative image" class="intro__pattern-4">
                     <img src="img/bg-small-image-3.png" alt="decorative image" class="intro__pattern-5">
                     <img src="img/bg-small-image-4.png" alt="decorative image" class="intro__pattern-6">
+                </div>
 
             </section>
-            <!--     
+
+            <section class="welcome">
+
+                <h2 class="heading-secondary"><span
+                        class="heading-secondary--underlined">Welcome&nbsp;to&nbsp;Aseona</span><br><span
+                        class="heading-secondary--underlined">Digital&nbsp;Marketing</span></h2>
+                <p class="welcome__text">Having worked with hundreds of companies from small businesses to
+                    Fortune
+                    1000’s,
+                    we understand your pain points. We also understand we aren’t the right agency for every
+                    business. We
+                    want to work with businesses that want a partner, not a doer.</p>
+
+
+                <div class="welcome__features">
+                    <div class="welcome__feature">
+                        <h3 class="heading-tertiary">Clean Designs</h3>
+                        <p class="welcome__feature-text">Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                            Repudiandae, cupiditate deserunt. Earum asperiores in aliquam eos culpa quidem ipsa
+                            rem.
+                        </p>
+                    </div>
+
+                    <div class="welcome__feature">
+                        <h3 class="heading-tertiary">Amazing Features</h3>
+                        <p class="welcome__feature-text">
+                            Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt
+                            mollit
+                            anim id
+                            est
+                            laborum.
+                        </p>
+                    </div>
+                </div>
+
+                <a href="#" class="btn welcome__btn">About Us</a>
+
+                <div class="welcome__badges">
+                    <div class="badge welcome__badge welcome__badge--1">
+                        <div class="badge-info"><span class="badge-digit">920</span><span
+                                class="badge-text">Customers</span>
+                        </div>
+                    </div>
+
+                    <div class="badge welcome__badge welcome__badge--2">
+                        <div class="badge-info"><span class="badge-digit">8630</span><span class="badge-text">Keywords
+                                Rank</span>
+                        </div>
+                    </div>
+
+                    <div class="badge welcome__badge welcome__badge--3">
+                        <div class="badge-info"><span class="badge-digit">40+</span><span class="badge-text">Awards
+                                Win</span>
+                        </div>
+                    </div>
+
+                    <div class="badge welcome__badge welcome__badge--4">
+                        <div class="badge-info"><span class="badge-digit">570</span>
+                            <span class="badge-text">Projects Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+    <!--     
             <section class="welcome">
                 <div class="row">
 
@@ -526,9 +592,9 @@
                 </div>
             </section>
         -->
-        </main>
+    </main>
 
-        <!--
+    <!--
         <footer class="footer">
             <div class="footer__info">
                 <div class="row">
@@ -617,7 +683,6 @@
             </div>
 
         </footer> -->
-    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>

@@ -106,20 +106,21 @@ body {
   cursor: pointer;
 }
 
-.container {
+.body-grid {
   display: grid;
   grid-template-columns: [full-start] 1fr [center-start] repeat(4, [col-start] minmax(min-content, 28rem) [col-end]) [center-end] 1fr [full-end];
+}
+
+.container-wide {
+  grid-column: full-start/full-end;
+  display: grid;
+  grid-template-columns: 1fr [center-start] repeat(2, [col-start] minmax(min-content, 28rem) [col-end]) [grid-center] repeat(2, [col-start] minmax(min-content, 28rem) [col-end]) [center-end] 1fr;
 }
 
 .container-narrow {
+  grid-column: center-start/center-end;
   display: grid;
-  grid-template-columns: 1fr repeat(4, minmax(min-content, 28rem)) 1fr;
-}
-
-.main {
-  grid-column: 1/-1;
-  display: grid;
-  grid-template-columns: [full-start] 1fr [center-start] repeat(4, [col-start] minmax(min-content, 28rem) [col-end]) [center-end] 1fr [full-end];
+  grid-template-columns: [center-start] repeat(2, [col-start] minmax(min-content, 28rem) [col-end]) [grid-center] repeat(2, [col-start] minmax(min-content, 28rem) [col-end]) [center-end];
 }
 
 .slick-prev:before,
@@ -272,23 +273,19 @@ height: 40rem;
   height: 20rem;
   width: 20rem;
   border-radius: 1rem;
-  position: relative;
+  display: flex;
+  justify-content: center;
 }
 .badge-info {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: #000;
   font-weight: 700;
 }
 .badge-digit {
   font-size: 4.8rem;
-  display: block;
-}
-.badge-text {
-  display: block;
 }
 
 .card-1 {
@@ -527,7 +524,7 @@ height: 40rem;
   background: #38c3c7;
 }
 .navigation__center {
-  grid-column: 2/6;
+  grid-column: center-start/center-end;
   grid-row: 2/3;
   display: flex;
   justify-content: space-between;
@@ -631,14 +628,22 @@ height: 40rem;
   }
 }
  */
+.main {
+  grid-row: 3/4;
+  grid-column: full-start/full-end;
+}
+
 .intro {
-  grid-column: center-start/center-end;
-  grid-row: 4/5;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(min-content, 1fr));
-  gap: 10%;
-  padding: 10% 0;
+  grid-column: full-start/full-end;
+  grid-row: 1/2;
+  background: #f3f8f8;
+}
+.intro__container {
   position: relative;
+  padding: 10% 0;
+}
+.intro__content {
+  grid-column: center-start/grid-center;
 }
 .intro__text {
   margin-top: 3rem;
@@ -651,6 +656,9 @@ height: 40rem;
 .intro__link:hover, .intro__link:active {
   color: #38c3c7;
   cursor: pointer;
+}
+.intro__image {
+  grid-column: grid-center/center-end;
 }
 .intro__img {
   max-width: 100%;
@@ -688,160 +696,58 @@ height: 40rem;
   bottom: 5%;
 }
 
-/* .intro {
-  position: relative;
-  background: $color-grey-3;
-
-  &__content {
-    width: 40%;
-    float: left;
-    margin: 10% 0;
-  }
-
-  &__text {
-    margin-top: 3rem;
-  }
-
-  &__link {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #000;
-
-    &:hover,
-    &:active {
-      color: $color-cyan;
-      cursor: pointer;
-    }
-  }
-
-  &__image {
-    width: 40%;
-    float: right;
-    margin: 10% 0;
-  }
-
-  &__img {
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
-  }
-
-  &__pattern {
-    &-1 {
-      position: absolute;
-      right: 6%;
-      top: 3%;
-    }
-
-    &-2 {
-      position: absolute;
-      right: 45%;
-      bottom: 8%;
-
-      @include respond(phone) {
-        bottom: 2%;
-      }
-    }
-
-    &-3 {
-      position: absolute;
-      left: 9%;
-      top: 7%;
-
-      @include respond(phone) {
-        top: 2%;
-      }
-    }
-
-    &-4 {
-      position: absolute;
-      right: 8%;
-      bottom: 4%;
-    }
-
-    &-5 {
-      position: absolute;
-      right: 55%;
-      bottom: 15%;
-
-      @include respond(phone) {
-        display: none;
-      }
-    }
-
-    &-6 {
-      position: absolute;
-      left: 7%;
-      bottom: 5%;
-
-      @include respond(phone) {
-        left: 2%;
-        bottom: 0;
-      }
-    }
-  }
-}
-
 .welcome {
   margin: 6% auto;
-
-  &__text {
-    margin: 3rem auto;
-  }
-
-  &__features {
-    @include clearfix();
-  }
-
-  &__feature {
-    width: 45%;
-
-    &:nth-of-type(1) {
-      float: left;
-    }
-
-    &:nth-of-type(2) {
-      float: right;
-    }
-  }
-
-  &__feature-text {
-    margin: 3rem auto;
-  }
-
-  &__badges {
-    position: relative;
-    min-height: 40rem;
-  }
-
-  &__badge {
-    position: absolute;
-
-    &--1 {
-      background: #d4f4f4;
-      top: 5%;
-      left: 13%;
-    }
-
-    &--2 {
-      background: #fbe7ea;
-      top: 70%;
-      left: 13%;
-    }
-
-    &--3 {
-      background: #e3f8d8;
-      right: 0;
-      top: 13%;
-    }
-
-    &--4 {
-      background: #f5efd8;
-      right: 0;
-      top: 78%;
-    }
-  }
+  grid-column: center-start/center-end;
+  grid-row: 3/4;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  gap: 0 5%;
 }
+.welcome__text {
+  grid-column: 1/2;
+  margin: 3rem auto;
+}
+.welcome__features {
+  grid-column: 1/2;
+  display: flex;
+  justify-content: space-between;
+}
+.welcome__feature {
+  flex: 0 1 45%;
+}
+.welcome__feature-text {
+  margin: 3rem auto;
+}
+.welcome__btn {
+  grid-column: 1/2;
+  justify-self: start;
+}
+.welcome__badges {
+  grid-column: 2/3;
+  grid-row: 1/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.welcome__badge--1 {
+  background: #d4f4f4;
+}
+.welcome__badge--2 {
+  background: #fbe7ea;
+  align-self: end;
+}
+.welcome__badge--3 {
+  background: #e3f8d8;
+}
+.welcome__badge--4 {
+  background: #f5efd8;
+  align-self: end;
+}
+
+/* 
+
+
 
 .case-study {
   background-color: $color-grey-3;

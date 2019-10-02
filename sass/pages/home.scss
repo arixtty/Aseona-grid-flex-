@@ -1,83 +1,22 @@
-.intro {
-  grid-column: center-start / center-end;
-  grid-row: 4 / 5;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(min-content, 1fr));
-  gap: 10%;
-  padding: 10% 0;
-  position: relative;
-
-  &__text {
-    margin-top: 3rem;
-  }
-
-  &__link {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #000;
-
-    &:hover,
-    &:active {
-      color: $color-cyan;
-      cursor: pointer;
-    }
-  }
-
-  &__img {
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
-  }
-
-  &__pattern {
-    &-1 {
-      position: absolute;
-      right: 6%;
-      top: 3%;
-    }
-
-    &-2 {
-      position: absolute;
-      right: 45%;
-      bottom: 8%;
-    }
-
-    &-3 {
-      position: absolute;
-      left: 9%;
-      top: 7%;
-    }
-
-    &-4 {
-      position: absolute;
-      right: 8%;
-      bottom: 4%;
-    }
-
-    &-5 {
-      position: absolute;
-      right: 55%;
-      bottom: 15%;
-    }
-
-    &-6 {
-      position: absolute;
-      left: 7%;
-      bottom: 5%;
-    }
-  }
+.main {
+  grid-row: 3 / 4;
+  grid-column: full-start / full-end;
+  
 }
 
-/* .intro {
-  position: relative;
+.intro {
+  grid-column: full-start / full-end;
+  grid-row: 1 / 2;
   background: $color-grey-3;
-
-  &__content {
-    width: 40%;
-    float: left;
-    margin: 10% 0;
+  
+  &__container {
+    position: relative;
+    padding: 10% 0;
+    
   }
-
+  &__content {
+    grid-column: center-start / grid-center;
+  }
   &__text {
     margin-top: 3rem;
   }
@@ -95,9 +34,7 @@
   }
 
   &__image {
-    width: 40%;
-    float: right;
-    margin: 10% 0;
+    grid-column: grid-center / center-end;
   }
 
   &__img {
@@ -117,20 +54,12 @@
       position: absolute;
       right: 45%;
       bottom: 8%;
-
-      @include respond(phone) {
-        bottom: 2%;
-      }
     }
 
     &-3 {
       position: absolute;
       left: 9%;
       top: 7%;
-
-      @include respond(phone) {
-        top: 2%;
-      }
     }
 
     &-4 {
@@ -143,85 +72,79 @@
       position: absolute;
       right: 55%;
       bottom: 15%;
-
-      @include respond(phone) {
-        display: none;
-      }
     }
 
     &-6 {
       position: absolute;
       left: 7%;
       bottom: 5%;
-
-      @include respond(phone) {
-        left: 2%;
-        bottom: 0;
-      }
     }
   }
 }
 
 .welcome {
   margin: 6% auto;
-
+  grid-column: center-start / center-end;
+  grid-row: 3 / 4;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  gap: 0 5%;
   &__text {
+    grid-column: 1 / 2;
     margin: 3rem auto;
   }
 
   &__features {
-    @include clearfix();
+    grid-column: 1 / 2;
+    display: flex;
+    justify-content: space-between;
   }
 
   &__feature {
-    width: 45%;
-
-    &:nth-of-type(1) {
-      float: left;
-    }
-
-    &:nth-of-type(2) {
-      float: right;
-    }
+    flex: 0 1 45%;
   }
 
   &__feature-text {
     margin: 3rem auto;
   }
 
+  &__btn {
+    grid-column: 1 / 2;
+    justify-self: start;
+  }
+
   &__badges {
-    position: relative;
-    min-height: 40rem;
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
   }
 
   &__badge {
-    position: absolute;
-
     &--1 {
       background: #d4f4f4;
-      top: 5%;
-      left: 13%;
     }
 
     &--2 {
       background: #fbe7ea;
-      top: 70%;
-      left: 13%;
+      align-self: end;
     }
 
     &--3 {
       background: #e3f8d8;
-      right: 0;
-      top: 13%;
     }
 
     &--4 {
       background: #f5efd8;
-      right: 0;
-      top: 78%;
+      align-self: end;
     }
   }
 }
+
+/* 
+
+
 
 .case-study {
   background-color: $color-grey-3;
