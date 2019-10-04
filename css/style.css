@@ -39,7 +39,6 @@ body {
   display: inline-block;
   position: relative;
   z-index: 1;
-  margin-right: auto;
 }
 .heading-primary--underlined::after {
   content: "";
@@ -60,7 +59,6 @@ body {
   display: inline-block;
   position: relative;
   z-index: 1;
-  margin-right: auto;
 }
 .heading-secondary--underlined::after {
   content: "";
@@ -84,7 +82,6 @@ body {
   display: inline-block;
   position: relative;
   z-index: 1;
-  margin-right: auto;
 }
 .heading-tertiary--underlined::after {
   content: "";
@@ -106,21 +103,21 @@ body {
   cursor: pointer;
 }
 
-.body-grid {
+.grid-body-wide {
   display: grid;
   grid-template-columns: [full-start] 1fr [center-start] repeat(4, [col-start] minmax(min-content, 28rem) [col-end]) [center-end] 1fr [full-end];
 }
 
-.container-wide {
-  grid-column: full-start/full-end;
-  display: grid;
-  grid-template-columns: 1fr [center-start] repeat(2, [col-start] minmax(min-content, 28rem) [col-end]) [grid-center] repeat(2, [col-start] minmax(min-content, 28rem) [col-end]) [center-end] 1fr;
-}
-
-.container-narrow {
+.grid-content-4-col {
   grid-column: center-start/center-end;
   display: grid;
   grid-template-columns: [center-start] repeat(2, [col-start] minmax(min-content, 28rem) [col-end]) [grid-center] repeat(2, [col-start] minmax(min-content, 28rem) [col-end]) [center-end];
+}
+
+.grid-content-3-col {
+  grid-column: center-start/center-end;
+  display: grid;
+  grid-template-columns: [center-start] repeat(3, [col-start] minmax(min-content, 38rem) [col-end]) [center-end];
 }
 
 .slick-prev:before,
@@ -307,6 +304,7 @@ height: 40rem;
   perspective: 150rem;
   margin: 1rem;
   z-index: 100;
+  width: 30rem;
 }
 .card-2__heading {
   color: #fff;
@@ -398,7 +396,7 @@ height: 40rem;
 
 .reviews__story {
   height: 27rem;
-  width: 30rem;
+  max-width: 30rem;
   margin: 2.5rem;
   padding: 2.5rem;
   border-radius: 1rem;
@@ -518,7 +516,7 @@ height: 40rem;
 }
  */
 .navigation {
-  grid-column: 1/-1;
+  grid-column: full-start/full-end;
   grid-row: 2/3;
   padding: 2rem 0;
   background: #38c3c7;
@@ -729,6 +727,7 @@ height: 40rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  justify-items: end;
 }
 .welcome__badge--1 {
   background: #d4f4f4;
@@ -745,154 +744,139 @@ height: 40rem;
   align-self: end;
 }
 
-/* 
-
-
-
 .case-study {
-  background-color: $color-grey-3;
-  padding: 5% 12%;
-  overflow: hidden;
-
-  &__text {
-    position: relative;
-  }
-
-  &__paragpraph {
-    margin: 3rem 0;
-  }
-
-  &__btn {
-    position: absolute;
-    right: 0;
-    top: 50%;
-  }
-
-  &__link {
-    color: #fb5c71;
-  }
-
-  &__case {
-    margin: 2rem;
-
-    img {
-      width: 100%;
-    }
-  }
+  grid-column: full-start/full-end;
+  grid-row: 4/5;
+  background-color: #f3f8f8;
+  padding: 5% 0;
+}
+.case-study__text {
+  grid-column: center-start/center-end;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.case-study__paragpraph {
+  order: 2;
+  margin-top: 2rem;
+}
+.case-study__btn {
+  order: 1;
+  margin-top: 2rem;
+  align-self: flex-end;
+}
+.case-study__link {
+  color: #fb5c71;
+}
+.case-study__showcase {
+  grid-row: 3/4;
+  grid-column: center-start/center-end;
+  max-width: 114rem;
+}
+.case-study__case {
+  margin: 2rem;
+  max-width: 28rem;
+}
+.case-study__case img {
+  width: 100%;
 }
 
 .services {
   padding: 5% 0;
   text-align: center;
-
-  &__subheading {
-    max-width: 40%;
-    margin: 0 auto 5rem;
-  }
-
-  &__card {
-    text-align: left;
-    height: 30rem;
-    padding: 2rem;
-  }
-
-  &__badge {
-    padding: 2rem;
-    background-image: url(../../img/bg-splash.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-
-  &__text {
-    text-align: initial;
-  }
+  grid-row: 5/6;
+  grid-column: center-start/center-end;
+}
+.services__subheading {
+  max-width: 40%;
+  margin: 0 auto 5rem;
+}
+.services__card {
+  grid-row: 6/8;
+  text-align: left;
+  height: 30rem;
+  padding: 2rem;
+}
+.services__badge {
+  padding: 2rem;
+  background-image: url(../../img/bg-splash.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.services__text {
+  text-align: initial;
 }
 
 .pricing {
+  grid-row: 6/7;
+  grid-column: center-start/center-end;
   text-align: center;
   font-size: 1.6rem;
-
-  &__period {
-    margin: 5rem 0;
-
-    .heading-tertiary {
-      display: inline-block;
-    }
-    .heading-tertiary:first-of-type {
-      margin-right: 3rem;
-    }
-  }
-
-  &__heading {
-    text-align: left;
-    .heading-tertiary {
-      color: #fff;
-    }
-  }
-
-  &__price {
-    &-offer {
-      color: #fff;
-    }
-
-    &-fare {
-      margin-top: 1rem;
-      color: #fff;
-      span {
-        font-size: 4.4rem;
-
-        sup {
-          font-style: italic;
-        }
-      }
-    }
-  }
-
-  &__services {
-    text-align: left;
-    list-style: none;
-    margin-top: 15rem;
-    margin-bottom: 3rem;
-
-    li {
-      margin-bottom: 1rem;
-    }
-  }
+}
+.pricing__period {
+  margin: 5rem 0;
+}
+.pricing__period .heading-tertiary {
+  display: inline-block;
+}
+.pricing__period .heading-tertiary:first-of-type {
+  margin-right: 3rem;
+}
+.pricing__heading {
+  text-align: left;
+}
+.pricing__heading .heading-tertiary {
+  color: #fff;
+}
+.pricing__price-offer {
+  color: #fff;
+}
+.pricing__price-fare {
+  margin-top: 1rem;
+  color: #fff;
+}
+.pricing__price-fare span {
+  font-size: 4.4rem;
+}
+.pricing__price-fare span sup {
+  font-style: italic;
+}
+.pricing__services {
+  text-align: left;
+  list-style: none;
+  margin-top: 15rem;
+  margin-bottom: 3rem;
+}
+.pricing__services li {
+  margin-bottom: 1rem;
 }
 
 .reviews {
-  text-align: center;
+  grid-row: 7;
+  grid-column: 1/-1;
   z-index: -1;
-  background: $color-grey-3;
+  background: #f3f8f8;
   margin-top: -25rem;
   padding: 35rem 0 5%;
-
-  &__content {
-    @include clearfix();
-    margin-top: 5rem;
-    // white-space: nowrap;
-  }
-  &__image {
-    max-width: 40%;
-    padding: 0 5%;
-    margin-left: 10%;
-    float: left;
-
-    &--img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  &__stories {
-    width: 40%;
-    margin-right: 10%;
-    margin-top: 3%;
-    float: left;
-  }
+}
+.reviews__content {
+  grid-row: 2/3;
+}
+.reviews__image {
+  padding: 0 5%;
+  grid-column: center-start/grid-center;
+}
+.reviews__image--img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.reviews__stories {
+  grid-column: grid-center/center-end;
 }
 
+/*
 .contact {
   @include clearfix();
   padding: 5% 0 2%;

@@ -1,18 +1,16 @@
 .main {
   grid-row: 3 / 4;
   grid-column: full-start / full-end;
-  
 }
 
 .intro {
   grid-column: full-start / full-end;
   grid-row: 1 / 2;
   background: $color-grey-3;
-  
+
   &__container {
     position: relative;
     padding: 10% 0;
-    
   }
   &__content {
     grid-column: center-start / grid-center;
@@ -119,6 +117,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    justify-items: end;
   }
 
   &__badge {
@@ -142,36 +141,44 @@
   }
 }
 
-/* 
-
-
-
 .case-study {
+  grid-column: full-start / full-end;
+  grid-row: 4 / 5;
   background-color: $color-grey-3;
-  padding: 5% 12%;
-  overflow: hidden;
+  padding: 5% 0;
 
   &__text {
-    position: relative;
+    grid-column: center-start / center-end;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
   &__paragpraph {
-    margin: 3rem 0;
+    order: 2;
+    margin-top: 2rem;
   }
 
   &__btn {
-    position: absolute;
-    right: 0;
-    top: 50%;
+    order: 1;
+    margin-top: 2rem;
+    align-self: flex-end;
   }
 
   &__link {
     color: #fb5c71;
   }
 
+  &__showcase {
+    grid-row: 3 / 4;
+    grid-column: center-start / center-end;
+    max-width: 114rem;
+  }
+
   &__case {
     margin: 2rem;
-
+    max-width: 28rem;
     img {
       width: 100%;
     }
@@ -181,13 +188,15 @@
 .services {
   padding: 5% 0;
   text-align: center;
-
+  grid-row: 5 / 6;
+  grid-column: center-start / center-end;
   &__subheading {
     max-width: 40%;
     margin: 0 auto 5rem;
   }
 
   &__card {
+    grid-row: 6 / 8;
     text-align: left;
     height: 30rem;
     padding: 2rem;
@@ -206,6 +215,8 @@
 }
 
 .pricing {
+  grid-row: 6 / 7;
+  grid-column: center-start / center-end;
   text-align: center;
   font-size: 1.6rem;
 
@@ -257,39 +268,37 @@
   }
 }
 
-.reviews {
-  text-align: center;
-  z-index: -1;
-  background: $color-grey-3;
-  margin-top: -25rem;
-  padding: 35rem 0 5%;
+// .reviews {
+//   grid-row: 7;
+//   grid-column: full-start / full-end;
+//   z-index: -1;
+//   background: $color-grey-3;
+//   margin-top: -25rem;
+//   padding: 35rem 0 5%;
 
-  &__content {
-    @include clearfix();
-    margin-top: 5rem;
-    // white-space: nowrap;
-  }
-  &__image {
-    max-width: 40%;
-    padding: 0 5%;
-    margin-left: 10%;
-    float: left;
+//   h2 {
+//     margin: 0 auto;
+//   }
 
-    &--img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  }
+//   &__content {
+//     grid-row: 2 / 3;
+//   }
+//   &__image {
+//     padding: 0 5%;
+//     grid-column: center-start / grid-center;
 
-  &__stories {
-    width: 40%;
-    margin-right: 10%;
-    margin-top: 3%;
-    float: left;
-  }
-}
+//     &--img {
+//       display: block;
+//       width: 100%;
+//       height: auto;
+//     }
+//   }
 
+//   &__stories {
+//     grid-column: grid-center / center-end;
+//   }
+// }
+/*
 .contact {
   @include clearfix();
   padding: 5% 0 2%;
