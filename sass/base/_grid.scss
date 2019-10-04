@@ -1,16 +1,26 @@
 .grid-body-wide {
   display: grid;
-  grid-template-columns: [full-start] 1fr [center-start] repeat(4, [col-start] minmax(min-content, 28rem) [col-end]) [center-end] 1fr [full-end];
+  grid-template-columns: [full-start] 1fr [center-start] repeat(
+      4,
+      [col-start] minmax(min-content, 28.5rem) [col-end]
+    ) [center-end] 1fr [full-end];
 }
 
 .grid-content-4-col {
   grid-column: center-start / center-end;
   display: grid;
-  grid-template-columns: [center-start] repeat(2, [col-start] minmax(min-content, 28rem) [col-end]) [grid-center] repeat(2, [col-start] minmax(min-content, 28rem) [col-end]) [center-end];
+  grid-template-columns: [center-start] repeat(
+      2,
+      [col-start] minmax(min-content, 28.5rem) [col-end]
+    ) [grid-center] repeat(2, [col-start] minmax(min-content, 28.5rem) [col-end]) [center-end];
 }
 
 .grid-content-3-col {
   grid-column: center-start / center-end;
   display: grid;
-  grid-template-columns: [center-start] repeat(3, [col-start] minmax(min-content, 38rem) [col-end]) [center-end];
+  grid-template-columns: [center-start] repeat(
+      3,
+      [col-start] minmax(min-content, 38rem) [col-end]
+    ) [center-end];
+  justify-items: center;
 }

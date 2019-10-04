@@ -1,15 +1,33 @@
-/* .subscribe {
-  padding: 5% 0;
+.subscribe {
+  padding: 5rem 0;
 
   &__container {
-    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: $color-grey-3;
+    grid-column: center-start / center-end;
+  }
+
+  &__heading {
+    font-size: 3.6rem;
+    color: #000;
+  }
+
+  &__text {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+
   }
 
   &__form {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    margin: 2rem 0;
 
     & > * {
       outline: none;
@@ -20,9 +38,8 @@
     }
     input {
       border-radius: 10rem 0 0 10rem;
-      margin-right: 0;
-      width: 30rem;
-      display: inline-block;
+      flex: 0 0 25rem;
+      max-width: 30rem;
     }
   }
 
@@ -30,9 +47,9 @@
     border-radius: 0 10rem 10rem 0;
     background-color: $color-pink-4;
     color: #fff;
-    margin-left: -4px;
+    flex: 1 0 10rem;
     max-width: 12rem;
-    display: inline-block;
+    // display: inline-block;
     cursor: pointer;
   }
-} */
+}
