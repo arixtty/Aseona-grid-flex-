@@ -56,16 +56,16 @@
 
   &__byline {
     border-top: 1px solid $color-grey-2;
-    grid-row: 2 / 3;
+
   }
 
   &__copy {
-    grid-column: center-start / grid-center;
+    grid-column: 1 / 2;
     margin-top: 1rem;
   }
 
   &__byline-list {
-    grid-column: grid-center / center-end;
+    grid-column: 2 / 3;
     display: flex;
     justify-content: space-between;
   }

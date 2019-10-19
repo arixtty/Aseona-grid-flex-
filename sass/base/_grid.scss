@@ -1,4 +1,4 @@
-.grid-body-wide {
+/* .grid-body-wide {
   display: grid;
   grid-template-columns: [full-start] 1fr [center-start] repeat(
       4,
@@ -24,3 +24,79 @@
     ) [center-end];
   justify-items: center;
 }
+ */
+
+
+ 
+ .grid-wide {
+  grid-column: full-start / full-end;
+  display: grid;
+  grid-template-columns: [full-start] 1fr [center-start] minmax(0, $content-width) [center-end] 1fr [full-end];
+  grid-gap: $grid-row-gap $grid-column-gap; // Ширина конента = $content-width + все существующие $grid-column-gap => ширина колонки для четырехколоночного макета рассчитывается ($content-width - $grid-column-gap * 3) / 4
+}
+
+.grid-4-col {
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc((#{$content-width} - #{$grid-column-gap} * 3) / 4), 1fr));
+  grid-gap: $grid-row-gap $grid-column-gap;
+}
+
+.grid-1-of-2-col {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(calc((#{$content-width} - #{$grid-column-gap} * 3) / 4), 1fr));
+ grid-gap: $grid-column-gap;
+}
+
+.grid-3-col {
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc((#{$content-width} - #{$grid-column-gap} * 2) / 3), 1fr));
+  grid-gap: $grid-row-gap $grid-column-gap;
+}
+
+.grid-2-col {
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc((#{$content-width} - #{$grid-column-gap}) / 2), 1fr));
+  grid-gap: $grid-row-gap $grid-column-gap;
+}
+
+.grid-1-and-2-col {
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: calc((#{$content-width} - #{$grid-column-gap} * 2) / 3) calc(2 * (#{$content-width} - #{$grid-column-gap} * 2) / 3 + #{$grid-column-gap});
+  grid-gap: $grid-row-gap $grid-column-gap;
+}
+
+@media only screen and (max-width: 75em) {
+  .grid-1-and-2-col {
+    grid-template-columns: 1fr 2fr;
+  }
+/*   .grid-4-col {
+    grid-template-columns: repeat(2, 1fr); // использовать, если четвертая колонка ломает макет при уменьшении экрана
+  } */
+}
+
+@media only screen and (max-width: 60em) {
+  .grid-wide {
+    grid-template-columns: [full-start] 0px [center-start] minmax(0, $content-width) [center-end] 0px [full-end];
+    grid-column-gap: 0;
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  .grid-1-and-2-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .grid-2-col {
+    grid-template-columns: 1fr;
+  }
+  .grid-3-col {
+    grid-template-columns: 1fr;
+  }
+}
+
