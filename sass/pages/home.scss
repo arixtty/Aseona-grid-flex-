@@ -1,5 +1,8 @@
 .wrapper.grid-wide {
   grid-row-gap: 0;
+  @media only screen and (max-width: 64em) {
+    padding: 0 1rem;
+  }
 }
 
 main {

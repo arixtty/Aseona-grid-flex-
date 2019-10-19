@@ -647,12 +647,10 @@ body {
 .footer {
   padding: 3% 0;
   font-size: 1.6rem;
-  grid-row: 10/11;
   grid-column: full-start/full-end;
 }
 .footer__col {
-  grid-row: 1/2;
-  padding: 0 1rem;
+  grid-gap: 1rem;
 }
 .footer__link {
   margin-top: 1rem;
@@ -678,6 +676,7 @@ body {
 }
 .footer__tweet {
   margin-top: 1rem;
+  align-self: end;
 }
 .footer__tweet--author {
   color: #000;
@@ -691,19 +690,26 @@ body {
 }
 .footer__byline {
   border-top: 1px solid #c4c4c4;
+  grid-column: center-start/center-end;
 }
 .footer__copy {
-  grid-column: 1/2;
   margin-top: 1rem;
 }
 .footer__byline-list {
-  grid-column: 2/3;
   display: flex;
   justify-content: space-between;
+}
+.footer__byline-link {
+  padding: 0 0.5rem;
 }
 
 .wrapper.grid-wide {
   grid-row-gap: 0;
+}
+@media only screen and (max-width: 64em) {
+  .wrapper.grid-wide {
+    padding: 0 1rem;
+  }
 }
 
 main {

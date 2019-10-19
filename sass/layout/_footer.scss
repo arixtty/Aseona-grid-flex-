@@ -1,12 +1,13 @@
 .footer {
   padding: 3% 0;
   font-size: 1.6rem;
-  grid-row: 10 / 11;
   grid-column: full-start / full-end;
+  
 
   &__col {
-    grid-row: 1 / 2;
-    padding: 0 1rem;
+    // align-self: center;
+    // padding: 0 1rem;
+    grid-gap: 1rem;
   }
 
   &__link {
@@ -32,7 +33,6 @@
 
   &__list {
     list-style: none;
-
     &--byline {
       list-style: none;
     }
@@ -40,6 +40,7 @@
 
   &__tweet {
     margin-top: 1rem;
+    align-self: end;
     &--author {
       color: #000;
       font-weight: 700;
@@ -56,17 +57,19 @@
 
   &__byline {
     border-top: 1px solid $color-grey-2;
-
+    grid-column: center-start / center-end;
   }
 
   &__copy {
-    grid-column: 1 / 2;
     margin-top: 1rem;
   }
 
   &__byline-list {
-    grid-column: 2 / 3;
     display: flex;
     justify-content: space-between;
+  }
+
+  &__byline-link {
+    padding: 0 .5rem;
   }
 }
