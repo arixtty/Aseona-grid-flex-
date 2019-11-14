@@ -27,9 +27,12 @@
   font-size: 1.6rem;
   border-radius: 1rem;
   transition: all 0.2s;
-  // margin: 0 2rem;
 
   &:hover {
+    box-shadow: 0 0.5rem 1rem rgba($color-grey-2, 0.5);
+  }
+
+  @media only screen and (hover: none) {
     box-shadow: 0 0.5rem 1rem rgba($color-grey-2, 0.5);
   }
 }
@@ -63,10 +66,10 @@
     background-repeat: no-repeat;
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
 
+
     &--back {
       transform: rotateY(-180deg);
     }
-
     .btn {
       align-self: center;
       width: 70%;

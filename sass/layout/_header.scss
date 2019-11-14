@@ -12,6 +12,16 @@ grid-row: 1;
   }
 
   &__contacts-phone {
-	display: flex;	
+  display: flex;	
+  
+  @media only screen and (max-width: 27em) {
+    display: none;
+  }
+  }
+
+  &__contacts-social {
+    @media only screen and (max-width: 27em) {
+      flex: 1;
+    }
   }
 }

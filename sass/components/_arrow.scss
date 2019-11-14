@@ -6,3 +6,18 @@
         color: $color-grey-1;
     }
 }
+
+.slick-next {
+    @media screen and (max-width: 64em) {
+        // left: 0;
+        right: .5rem;
+    }
+}
+
+.slick-prev {
+    @media screen and (max-width: 64em) {
+        left: .5rem;
+        // right: 0;
+        z-index: 10;
+    }
+}

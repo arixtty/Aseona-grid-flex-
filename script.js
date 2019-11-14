@@ -35,14 +35,46 @@ $(document).ready(function() {
   });
 });
 
-/* $(document).ready(function() {
+$(document).ready(function() {
   $(".reviews__stories").slick({
-    dots: true,
+    dots: false,
     infinite: true,
-    speed: 300,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    arrows: false,
     cssEase: "ease-in",
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+    ]
   });
-}); */
+});
+
+var mobileBtn = document.querySelector(".nav__btn");
+var menu = document.querySelector(".mobile-nav");
+var overlay = document.querySelector(".overlay");
+
+mobileBtn.addEventListener("click", function() {
+  if (menu.className !== "mobile-nav open") {
+    menu.className += " open";
+    overlay.className += " open";
+  } else {
+    menu.className = "mobile-nav";
+    overlay.className = "overlay";
+  }
+});
+
+window.addEventListener("click", function(event) {
+  if (event.target === overlay) {
+    menu.className = "mobile-nav";
+    overlay.className = "overlay";
+  }
+});

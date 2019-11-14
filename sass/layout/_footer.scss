@@ -2,12 +2,22 @@
   padding: 3% 0;
   font-size: 1.6rem;
   grid-column: full-start / full-end;
-  
+  grid-row-gap: 5rem;
+
+  &__grid {
+    justify-items: initial;
+    grid-gap: 1rem;
+
+    @media only screen and (max-width: 27em) {
+      max-width: 80%;
+      grid-template-columns: 1fr;
+      justify-items: start;
+      grid-gap: 2rem;
+    }
+  }
 
   &__col {
-    // align-self: center;
-    // padding: 0 1rem;
-    grid-gap: 1rem;
+    padding: 0 1rem;
   }
 
   &__link {
@@ -25,6 +35,9 @@
     }
   }
 
+  &__contacts-phone {
+    margin-top: 2rem;
+  }
   &__address {
     font-style: italic;
     margin: 1rem 0;
@@ -58,6 +71,7 @@
   &__byline {
     border-top: 1px solid $color-grey-2;
     grid-column: center-start / center-end;
+    grid-gap: 0;
   }
 
   &__copy {

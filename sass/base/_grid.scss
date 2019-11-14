@@ -38,28 +38,50 @@
 .grid-4-col {
   grid-column: center-start / center-end;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(calc((#{$content-width} - #{$grid-column-gap} * 3) / 4), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(calc((#{$content-width} - #{$grid-column-gap} * 3) / 4 - 10rem), 1fr));
   grid-gap: $grid-row-gap $grid-column-gap;
+  @media only screen and (max-width: 27em) {
+    grid-column: full-start / full-end;
+  }
 }
 
 .grid-1-of-2-col {
  display: grid;
  grid-template-columns: repeat(auto-fit, minmax(calc((#{$content-width} - #{$grid-column-gap} * 3) / 4), 1fr));
  grid-gap: $grid-column-gap;
+ justify-items: start;
+ @media only screen and (max-width: 64em) {
+  grid-gap: 3rem;
+}
 }
 
 .grid-3-col {
   grid-column: center-start / center-end;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(calc((#{$content-width} - #{$grid-column-gap} * 2) / 3), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(calc((#{$content-width} - #{$grid-column-gap} * 2) / 3 - 10rem), 1fr));
   grid-gap: $grid-row-gap $grid-column-gap;
+
+  @media only screen and (max-width: 64em) {
+    grid-row-gap: 3rem;
+    justify-items: center;
+  }
+  @media only screen and (max-width: 27em) {
+    grid-column: full-start / full-end;
+  }
 }
 
 .grid-2-col {
   grid-column: center-start / center-end;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(calc((#{$content-width} - #{$grid-column-gap}) / 2), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(calc((#{$content-width} - #{$grid-column-gap}) / 2 - 10rem), 1fr));
   grid-gap: $grid-row-gap $grid-column-gap;
+  @media only screen and (max-width: 56.25em) {
+    grid-row-gap: 5rem;
+    justify-items: center;
+  }
+  @media only screen and (max-width: 27em) {
+    grid-column: full-start / full-end;
+  }
 }
 
 .grid-1-and-2-col {
