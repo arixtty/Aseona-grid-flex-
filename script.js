@@ -80,26 +80,3 @@ window.addEventListener("click", function(event) {
     overlay.className = "overlay";
   }
 });
-
-// Rotating cards for touch devices
-
-var cardFront = document.querySelector(".card-2__side--front");
-var cardBack = document.querySelector(".card-2__side--back");
-
-cardFront.addEventListener("touchend", function()  {
-  console.log('Touch');
-  if (cardFront.className !== "card-2__side card-2__side--front rotate180") {
-    cardFront.className += " rotate180";
-  } else {
-    cardFront.className += "card-2__side card-2__side--front";
-  }
-});
-
-cardBack.addEventListener("touchend", function()  {
-  if (cardFront.className === "card-2__side card-2__side--front rotate180") {
-    cardBack.className += " rotate0";
-  } else if (cardBack.className === "card-2__side card-2__side--back rotate0")  {
-    cardBack.className = "card-2__side card-2__side--back";
-    cardFront.className = "card-2__side card-2__side--front";
-  }
-});

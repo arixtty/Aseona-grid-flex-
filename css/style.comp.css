@@ -486,7 +486,6 @@ body {
   z-index: 100;
   width: 30rem;
   perspective: 150rem;
-  transform-style: preserve-3d;
 }
 @supports (-ms-ime-align: auto) {
   .card-2 {
@@ -494,6 +493,7 @@ body {
     perspective: none;
     -webkit-transform: perspective(150rem);
     transform: perspective(150rem);
+    transform-style: preserve-3d;
   }
 }
 .card-2__heading {
@@ -536,10 +536,18 @@ body {
 .card-2__side--pro .btn {
   background: linear-gradient(120deg, #ff9966, #fe66b6);
 }
-.card-2:hover .card-2__side--front, .card-2:active .card-2__side--front {
+.card-2:hover .card-2__side--front {
   transform: rotateY(180deg);
 }
-.card-2:hover .card-2__side--back, .card-2:active .card-2__side--back {
+.card-2:hover .card-2__side--back {
+  transform: rotateY(0);
+}
+
+.rotate180 {
+  transform: rotateY(180deg);
+}
+
+.rotate0 {
   transform: rotateY(0);
 }
 

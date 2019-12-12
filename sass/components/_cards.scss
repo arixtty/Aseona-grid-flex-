@@ -44,14 +44,14 @@
   z-index: 100;
   width: 30rem;
   perspective: 150rem;
-  transform-style: preserve-3d;
-
+  
   /// Fixes  perspective bug in MS Edge
   @supports (-ms-ime-align: auto) {
     -webkit-perspective: none;
     perspective: none;
     -webkit-transform: perspective(150rem);
     transform: perspective(150rem);
+    transform-style: preserve-3d;
   }
 
   &__heading {

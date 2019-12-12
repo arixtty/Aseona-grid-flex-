@@ -486,7 +486,6 @@ body {
   z-index: 100;
   width: 30rem;
   perspective: 150rem;
-  transform-style: preserve-3d;
 }
 @supports (-ms-ime-align: auto) {
   .card-2 {
@@ -494,6 +493,7 @@ body {
     perspective: none;
     -webkit-transform: perspective(150rem);
     transform: perspective(150rem);
+    transform-style: preserve-3d;
   }
 }
 .card-2__heading {
