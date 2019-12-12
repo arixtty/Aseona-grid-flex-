@@ -40,10 +40,19 @@
 .card-2 {
   min-height: 50rem;
   position: relative;
-  perspective: 150rem;
   margin: 1rem;
   z-index: 100;
   width: 30rem;
+  perspective: 150rem;
+  transform-style: preserve-3d;
+
+  /// Fixes  perspective bug in MS Edge
+  @supports (-ms-ime-align: auto) {
+    -webkit-perspective: none;
+    perspective: none;
+    -webkit-transform: perspective(150rem);
+    transform: perspective(150rem);
+  }
 
   &__heading {
     color: #fff;
@@ -90,17 +99,22 @@
     }
   }
 
-  &:hover &__side--front,
-  &:active &__side--front {
+  &:hover &__side--front {
     transform: rotateY(180deg);
   }
 
-  &:hover &__side--back,
-  &:active &__side--back {
+  &:hover &__side--back {
     transform: rotateY(0);
   }
 }
 
+.rotate180 {
+  transform: rotateY(180deg);
+}
+
+.rotate0 {
+  transform: rotateY(0);
+}
 .card-form {
   max-width: 27rem;
   max-height: 40rem;
