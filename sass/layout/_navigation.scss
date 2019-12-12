@@ -69,6 +69,7 @@
   background: #38c3c7;
   transform: translateX(100%) rotateZ(0deg);
   opacity: 0;
+  visibility: hidden;
   position: absolute;
   top: 0;
   right: 0;
@@ -162,8 +163,9 @@
 }
 
 .open {
-  display: block;
+  // display: block;
   transform: translateY(0);
+  visibility: visible;
   opacity: 1;
   z-index: 1000;
 }
